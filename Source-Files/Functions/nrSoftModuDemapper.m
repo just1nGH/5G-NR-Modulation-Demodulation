@@ -30,6 +30,7 @@ function softBits = nrSoftModuDemapper(symbsIn,moduType,N0,method)
     switch lower(moduType)
         case 'bpsk'
             softBits = 4/N0 * real(exp(-1j*pi/4)*symbsIn);
+            softBits = softBits(:);
         case 'qpsk'
             softBits = zeros(2,length(symbsIn));
             A = 1/sqrt(2);
