@@ -25,7 +25,7 @@ function softBits = nrSoftModuDemapper(symbsIn,moduType,N0,method)
 %   msg_hat = nrSoftModuDemapper(msg_hat,'16QAM',N0,'max-log-map');
 %   numErr = sum(msg ~=(msg_hat < 0));
 
-
+    N0 = max(N0,0.001);
 
     switch lower(moduType)
         case 'bpsk'
